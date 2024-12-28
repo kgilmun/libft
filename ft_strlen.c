@@ -1,9 +1,21 @@
-int  ft_strlen(char *str)
-{
-  int  count;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kgil-mun <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/28 11:17:19 by kgil-mun          #+#    #+#             */
+/*   Updated: 2024/12/28 11:18:11 by kgil-mun         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-  count = 0;
-  while (str[count] != '\0')
-    count++;
-  return (count);
+int	ft_strlen(char *str)
+{
+	int	count;
+
+	count = 0;
+	while (str[count] != '\0')
+		count++;
+	return (count);
 }

@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kgil-mun <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/28 11:08:49 by kgil-mun          #+#    #+#             */
-/*   Updated: 2024/12/28 11:09:40 by kgil-mun         ###   ########.fr       */
+/*   Created: 2024/12/28 11:52:49 by kgil-mun          #+#    #+#             */
+/*   Updated: 2024/12/28 11:56:32 by kgil-mun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int d)
+void	*ft_strlcpy(char *dest, const char *src, size_t dstsize)
 {
-	if (d > 47 && d < 58)
-		return (1);
-  	return (0);
+	size_t	i;
+
+	i = 0;
+	while (i < dstsize)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
 }

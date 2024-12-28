@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kgil-mun <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/28 11:08:49 by kgil-mun          #+#    #+#             */
-/*   Updated: 2024/12/28 11:09:40 by kgil-mun         ###   ########.fr       */
+/*   Created: 2024/12/28 11:42:13 by kgil-mun          #+#    #+#             */
+/*   Updated: 2024/12/28 11:51:20 by kgil-mun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int d)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	if (d > 47 && d < 58)
-		return (1);
-  	return (0);
+	unsigned char	*initial;
+	unsigned char	*final;
+	size_t			len;
+
+	initial = (unsigned char *)src;
+	final = (unsigned char *)dest;
+	len = n - 1;
+	while (len > 0)
+	{
+		final[len] = initial[len];
+		len--;
+	}
 }

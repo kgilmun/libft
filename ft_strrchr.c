@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kgil-mun <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/28 11:08:49 by kgil-mun          #+#    #+#             */
-/*   Updated: 2024/12/28 11:09:40 by kgil-mun         ###   ########.fr       */
+/*   Created: 2024/12/28 13:22:50 by kgil-mun          #+#    #+#             */
+/*   Updated: 2024/12/28 14:49:41 by kgil-mun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int d)
+char	*ft_strrchr(const char *str, int c)
 {
-	if (d > 47 && d < 58)
-		return (1);
-  	return (0);
+	char	*fletter;
+
+	fletter = NULL;
+	while (*str)
+	{
+		if (*str == c)
+			fletter = (char *)tr;
+		str++;
+	}
+	if (c == '\0')
+		return ((char *)str);
+	else if (c == *fletter)
+		return (fletter);
+	else
+		return (NULL);
 }

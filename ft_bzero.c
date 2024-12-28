@@ -1,12 +1,24 @@
-void  *ft_bzero(void *p, size_t n)
-{
-  unsigned char  *ptr;
-  size_t  i;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kgil-mun <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/28 11:30:04 by kgil-mun          #+#    #+#             */
+/*   Updated: 2024/12/28 11:52:23 by kgil-mun         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-  ptr = (unsigned char *)p;
-  while (i < n)
-  {
-    ptr[i] = 0;
-    i++;
-  }
+void	*ft_bzero(void *p, size_t n)
+{
+	unsigned char	*ptr;
+	size_t		i;
+
+	ptr = (unsigned char *)p;
+       	while (i < n)
+	{
+		ptr[i] = 0;
+		i++;
+	}
 }
