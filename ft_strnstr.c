@@ -5,7 +5,7 @@ char *strnstr(const char *haystack, const char *needle, size_t len) {
     return (haystack);
   while (i < len && haystack[i]) {
     j = 0;
-    while (i + j < len && haystack[j] == needle[j])
+    while (i + j < len && haystack[i + j] == needle[j])
       j++;
     if (needle[j] == '\0')
       return (haystack + i);
