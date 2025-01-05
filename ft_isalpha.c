@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kgil-mun <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kgil-mun <kgil-mun@student.42barcelon>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 11:07:37 by kgil-mun          #+#    #+#             */
-/*   Updated: 2024/12/28 11:12:22 by kgil-mun         ###   ########.fr       */
+/*   Updated: 2025/01/05 16:00:12 by kgil-mun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int d)
+int	ft_isalpha(int c)
 {
-	if ((d > 64 && d < 91) || (d > 96 && d < 123))
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
 		return (1);
 	return (0);
 }

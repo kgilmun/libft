@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kgil-mun <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kgil-mun <kgil-mun@student.42barcelo>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 11:08:49 by kgil-mun          #+#    #+#             */
-/*   Updated: 2024/12/28 11:09:40 by kgil-mun         ###   ########.fr       */
+/*   Updated: 2025/01/05 16:01:16 by kgil-mun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int d)
+int	ft_isdigit(int c)
 {
-	if (d > 47 && d < 58)
+	if (c >= '0' && c <= '9')
 		return (1);
   	return (0);
 }

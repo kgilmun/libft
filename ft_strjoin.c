@@ -1,0 +1,57 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kgil-mun <kgil-mun@student.42barcelon>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/04 10:39:37 by kgil-mun          #+#    #+#             */
+/*   Updated: 2025/01/05 16:18:34 by kgil-mun         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+static int	ft_strlen(const char *str)
+{
+	int	len;
+
+	len = 0;
+	while (str[len])
+		len++;
+	return (len);
+}
+
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	int		i;
+	int		j;
+	char	*p;
+
+	if (!(s1) || !(s2))
+		return (NULL);
+	i = ft_strlen(s1);
+	j = ft_strlen(s2);
+	p = malloc((i + j + 1) * sizeof(char));
+	if (p == NULL)
+		return (NULL);
+	i = 0;
+	while (s1[i])
+	{
+		p[i] = s1[i];
+		i++;
+	}
+	j = 0;
+	while (s2[j])
+	{
+		p[i + j] = s2[j];
+		j++;
+	}
+	p[i + j] = '\0';
+	return (p);
+}
+/*
+int main () {
+	printf("%s\n", ft_strjoin("Hola", "Cabeza Melon"));
+}*/

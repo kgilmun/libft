@@ -1,24 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kgil-mun <kgil-mun@student.42barcelon>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/28 12:09:01 by kgil-mun          #+#    #+#             */
-/*   Updated: 2025/01/05 16:10:14 by kgil-mun         ###   ########.fr       */
+/*   Created: 2025/01/03 16:49:23 by kgil-mun          #+#    #+#             */
+/*   Updated: 2025/01/05 16:13:54 by kgil-mun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *str, int c)
+#include <stdlib.h>
+#include <stdio.h>
+
+void	*ft_calloc(size_t num, size_t size)
 {
-	while (*str)
+	size_t i;
+	void *p;
+	unsigned char *pbyte;
+
+	i = 0;
+	p = malloc(num * size);
+	pbyte = (unsigned char *)p;
+	if (p == NULL)
+		return (NULL);
+	while (i < (num * size))
 	{
-		if (*str == c)
-			return (str);
-		str++;
+		pbyte[i] = 0;
+		i++;
 	}
-	if (c == '\0')
-		return (str);
-	return (NULL);
+	return (p);
+}
+
+int main ()
+{
+	printf("%p", ft_calloc(5, 4));
 }

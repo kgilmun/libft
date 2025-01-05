@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kgil-mun <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kgil-mun <kgil-mun@student.42barcelon>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 11:14:48 by kgil-mun          #+#    #+#             */
-/*   Updated: 2024/12/28 11:15:44 by kgil-mun         ###   ########.fr       */
+/*   Updated: 2025/01/05 16:04:14 by kgil-mun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int d)
+int	ft_isascii(int c)
 {
-	if (d >= 0 && d <= 127)
+	if (c >= 0 && c <= 127)
 		return (1);
 	return (0);
 }

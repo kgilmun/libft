@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kgil-mun <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kgil-mun <kgil-mun@student.42barcelon>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 13:22:50 by kgil-mun          #+#    #+#             */
-/*   Updated: 2024/12/28 14:49:41 by kgil-mun         ###   ########.fr       */
+/*   Updated: 2025/01/05 16:10:39 by kgil-mun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strrchr(const char *str, int c)
 	while (*str)
 	{
 		if (*str == c)
-			fletter = (char *)tr;
+			fletter = (char *)str;
 		str++;
 	}
 	if (c == '\0')
@@ -27,4 +27,4 @@ char	*ft_strrchr(const char *str, int c)
 		return (fletter);
 	else
 		return (NULL);
-}
+} 

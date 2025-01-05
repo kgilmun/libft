@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kgil-mun <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kgil-mun <kgil-mun@student.42barcelo>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 11:16:16 by kgil-mun          #+#    #+#             */
-/*   Updated: 2024/12/28 11:16:53 by kgil-mun         ###   ########.fr       */
+/*   Updated: 2025/01/05 16:05:27 by kgil-mun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int d)
+int	ft_isprint(int c)
 {
-	if (d > 31 && d < 127)
+	if (c >= 31 && c < 127)
 		return (1);
 	return (0);
 }

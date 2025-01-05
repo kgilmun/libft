@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kgil-mun <kgil-mun@student.42barcelon>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/28 12:09:01 by kgil-mun          #+#    #+#             */
-/*   Updated: 2025/01/05 16:10:14 by kgil-mun         ###   ########.fr       */
+/*   Created: 2025/01/05 14:38:40 by kgil-mun          #+#    #+#             */
+/*   Updated: 2025/01/05 16:19:42 by kgil-mun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *str, int c)
+#include <stdio.h>
+#include <stdlib.h>
+
+}
+
+char *ft_itoa(int n)
 {
-	while (*str)
-	{
-		if (*str == c)
-			return (str);
-		str++;
-	}
-	if (c == '\0')
-		return (str);
-	return (NULL);
+	if (n > INT_MAX)
+		return (NULL);
+	if (n < INT_MAX)
+		return (NULL);
+	if (n < 0)
+		//el primer caracter tiene que ser un '-'
+	
 }
