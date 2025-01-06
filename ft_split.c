@@ -42,40 +42,68 @@ static	int	ft_countwords(const char *s, char c)
 }
 
 //This function should return de initial letter for each word between separator
-static	int	ft_initialwordletter (const char *s, int *i, char c)
-{
-	int	initial;
-	while (s[*i] != '\0')
-	{
-		if (*i == 0 && s[*i] != c)
-		{
-			initial = *i;
-			i++;
-			return (initial);
-		}
-		if (s[*i - 1] == c && s[*i] != c)
-		{
-			initial = *i;
-			i++;
-			return (initial);
-		}
-		i++;
-	}
-}
+// static	int	ft_initialwordletter (const char *s, int *i, char c)
+// {
+// 	int	initial;
+// 	while (s[*i] != '\0')
+// 	{
+// 		if (*i == 0 && s[*i] != c)
+// 		{
+// 			initial = *i;
+// 			i++;
+// 			return (initial);
+// 		}
+// 		if (s[*i - 1] == c && s[*i] != c)
+// 		{
+// 			initial = *i;
+// 			i++;
+// 			return (initial);
+// 		}
+// 		i++;
+// 	}
+// }
 
-static	int	ft_finalwordletter(const char *s, int *j, char c)
-{
-	int	final;
+// static	int	ft_finalwordletter(const char *s, int *j, char c)
+// {
+// 	int	final;
 	
-	while (s[*j] != '\0')
+// 	while (s[*j] != '\0')
+// 	{
+// 		if (s[*j - 1] != c && s[*j] == c)
+// 		{
+// 			final = *j;
+// 			j++;
+// 			return (final);
+// 		}
+// 	}
+// }
+
+static	void	storewords(const char *s, char c)
+{
+	int	i, start, end, n;
+	char	*p;
+
+	i = 0;
+	n = 0;
+	while (s[i] != '\0')
 	{
-		if (s[*j - 1] != c && s[*j] == c)
+		if (s[i] != c)
 		{
-			final = *j;
-			j++;
-			return (final);
+			start = i;
+			while (s[i] != 0)
+				i++;
+			end = i;
+			p = malloc(((end - start) + 1) * sizeof(char));
+			if (p == NULL)
+				return (NULL);
+			p = strlcpy(p, s, (end - start));
+			arr[n] = p;
+			n++;
 		}
+		else
+			i++;
 	}
+	arr[n] = NULL;
 }
 
 char	**ft_split(char const *s, char c)
