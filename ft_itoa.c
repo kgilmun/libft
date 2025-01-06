@@ -87,5 +87,9 @@ int main()
 {
 	int n = -1234567;
 	char *p = ft_itoa(n);
+	printf("el puntero devuelto es: %s", p); //si es negativo tengo que poner + '8'
+	
+	n = 1234567;
+	char *p = ft_itoa(n);
 	printf("el puntero devuelto es: %s", p);
 }
