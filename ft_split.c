@@ -69,6 +69,16 @@ char	*ft_substr(const char *str, unsigned int start, size_t len)
 	return (p);
 }
 
+static void freememory(char **arr, const char *str, int n)
+{
+	while (n >= 0)
+	{
+		free(arr[n]);
+		n--;
+	}
+	free(arr);
+}
+
 static	char	**ft_storewords(const char *s, char c, char **arr)
 {
 	int	i, start, end, n;
@@ -80,23 +90,17 @@ static	char	**ft_storewords(const char *s, char c, char **arr)
 	{
 		if (s[i] != c)
 		{
-		    printf("\nsoy diferente de c\n en la posicion inicial es: %i\n", i);
 			start = i;
 			while (s[i] != c)
-			{
-			    printf("soy diferente de c en la posicion %i\n", i);
 			    i++;
-			} 
-			printf("la posicion final es %i\n\n", i);
 			end = i;
-			p = ft_substr (s, start, (end - start));
+			p = ft_substr(s, start, (end - start));
 			if (p == NULL)
 			{
-			    return NULL;
+				freememory(arr, p, n);
+				return (NULL);
 			}
-			printf("he copiado la palabra: '%s' en el puntero p\n", p);
 			arr[n] = p;
-			printf("se ha añadido '%s' al array\n", p);
 			n++;
 		}
 		if (s[i] == c)
