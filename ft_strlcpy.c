@@ -10,9 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_strlcpy(char *dest, const char *src, size_t dstsize)
+#include "libft.h"
+
+size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize)
 {
 	size_t	i;
+	size_t	len;
 
 	i = 0;
 	while (i < dstsize)
@@ -21,4 +24,6 @@ void	*ft_strlcpy(char *dest, const char *src, size_t dstsize)
 		i++;
 	}
 	dest[i] = '\0';
+	len = strlen(src);
+	return (len);
 }

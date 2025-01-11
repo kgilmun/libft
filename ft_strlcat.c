@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_strlcat(char *dest, const char *src, size_t dstsize)
+#include "libft.h"
+
+size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
 {
 	size_t	i;
 	size_t	count;
@@ -27,4 +29,5 @@ void	*ft_strlcat(char *dest, const char *src, size_t dstsize)
 	}
 	if (count == dstsize)
 		dest[count] = '\0';
+	return (dest);
 }

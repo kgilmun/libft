@@ -3,25 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kgil-mun <kgil-mun@student.42barcelon>      +#+  +:+       +#+        */
+/*   By: kgil-mun <kgil-mun@student.42barcelo>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 10:39:37 by kgil-mun          #+#    #+#             */
 /*   Updated: 2025/01/05 16:18:34 by kgil-mun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-
-static int	ft_strlen(const char *str)
-{
-	int	len;
-
-	len = 0;
-	while (str[len])
-		len++;
-	return (len);
-}
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -31,8 +20,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	if (!(s1) || !(s2))
 		return (NULL);
-	i = ft_strlen(s1);
-	j = ft_strlen(s2);
+	i = ft_strlen((char *)s1);
+	j = ft_strlen((char *)s2);
 	p = malloc((i + j + 1) * sizeof(char));
 	if (p == NULL)
 		return (NULL);

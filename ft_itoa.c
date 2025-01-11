@@ -10,86 +10,87 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 int	numlen(int n)
 {
-	int count;
+	int	count;
 
 	count = 0;
-	while (n > 9 )
-	{
-		count++;
-		n = n / 10;
-	}
-	count++;
 	if (n < 0)
-	{
-		while (n < -9 )
+		count++;
+	while (n != 0)
 	{
 		count++;
-		n = n / 10;
-	}
-	count ++;
+		n /= 10;
 	}
 	return (count);
 }
 
-char	*convert(int n, int len, char *p, int i)
+static int	handle_min_int(int i, char *p)
 {
-	if (n < 0)
-	{
-	    p[i] = '-';
-	    i++;
-	}
-	while (i < len)
+	p[0] = '-';
+	p[i] = '8';
+	return (214748364);
+}
+
+static void	fill_number(int n, int i, char *p, int control)
+{
+	while (i >= control)
 	{
 		p[i] = (n % 10) + '0';
 		n /= 10;
-		i++;
+		i--;
 	}
-	p[i] = '\0';
-	printf("\nEl puntero es: %s\n", p);
+}
+
+char	*convert(int n, int len, char *p)
+{
+	int	i;
+	int	control;
+
+	i = len - 1;
+	control = 0;
+	if (n < 0)
+	{
+		p[0] = '-';
+		control = 1;
+		if (n == -2147483648)
+		{
+			n = handle_min_int(i--, p);
+		}
+		else
+			n *= -1;
+	}
+	fill_number(n, i, p, control);
+	p[len] = '\0';
 	return (p);
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	int	len, start, end;
+	int		len;
 	char	*p;
-	char	temp;
 
 	if (n > 2147483647)
 		return (NULL);
-	if (n < -2147483648)
+	if (n <= -2147483648)
 		return (NULL);
 	len = numlen(n);
-	p = malloc((len + 1) * sizeof(char));
+	p = (char *)malloc((len + 1) * sizeof(char));
 	if (p == NULL)
 		return (NULL);
-		printf("llega hasta despues de mallc?\n");
-	start = 0;
-	p = convert(n, len, p, start);
-	end = len - 1;
-	while (start < end)
-	{
-		temp = p[start];
-		p[start] = p[end];
-		p[end] = temp;
-		start++;
-		end--;
-	}
+	p = convert(n, len, p);
 	return (p);
 }
-
+/*
 int main()
 {
-	int n = -1234567;
-	char *p = ft_itoa(n);
-	printf("el puntero devuelto es: %s", p); //si es negativo tengo que poner + '8'
-	
-	n = 1234567;
+	int n = -2147483648;
 	char *p = ft_itoa(n);
 	printf("el puntero devuelto es: %s", p);
-}
+	
+	n = 1234567;
+	p = ft_itoa(n);
+	printf("el puntero devuelto es: %s", p);
+}*/

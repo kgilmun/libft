@@ -10,20 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_atoi( const char *str)
 {
-	int i;
-	int signo;
-	int resultado;
+	int	i;
+	int	signo;
+	int	resultado;
 
 	i = 0;
 	signo = 1;
 	resultado = 0;
 	if (str[i] != '\0')
 	{
-		while (str[i] == ' ')
+		while (str[i] == ' ' || (str[i] > 8 && str[i] < 14))
 			i++;
 		if (str[i] == '\0')
 			return (0);
@@ -34,7 +34,7 @@ int	ft_atoi( const char *str)
 			i++;
 		}
 		if (str[i] < '0' || str[i] > '9')
-			return 0;
+			return (0);
 		while (str[i] >= '0' && str[i] <= '9')
 		{
 			resultado = resultado * 10 + (str[i] - '0');
@@ -42,10 +42,9 @@ int	ft_atoi( const char *str)
 		}
 		return (resultado * signo);
 	}
-	return 0;
+	return (0);
 }
-
-int main () {
+/*int main () {
 	printf("%i\n", ft_atoi("abc123"));
 	printf("%i\n", ft_atoi(" -45"));
 	printf("%i\n", ft_atoi("      +42abc123"));
@@ -55,4 +54,4 @@ int main () {
 
 	
 	return 0;
-}
+}*/

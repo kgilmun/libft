@@ -10,14 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
 void	*ft_calloc(size_t num, size_t size)
 {
-	size_t i;
-	void *p;
-	unsigned char *pbyte;
+	size_t			i;
+	void			*p;
+	unsigned char	*pbyte;
 
 	i = 0;
 	p = malloc(num * size);
@@ -31,8 +30,8 @@ void	*ft_calloc(size_t num, size_t size)
 	}
 	return (p);
 }
-
+/*
 int main ()
 {
 	printf("%p", ft_calloc(5, 4));
-}
+}*/

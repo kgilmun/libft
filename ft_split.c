@@ -10,18 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-
-static	int	ft_strlen(const char *s)
-{
-	int	i;
-	
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 static	int	ft_countwords(const char *s, char c)
 {
@@ -69,7 +58,7 @@ char	*ft_substr(const char *str, unsigned int start, size_t len)
 	return (p);
 }
 
-static void freememory(char **arr, const char *str, int n)
+static void freememory(char **arr, int n)
 {
 	while (n >= 0)
 	{
@@ -97,7 +86,7 @@ static	char	**ft_storewords(const char *s, char c, char **arr)
 			p = ft_substr(s, start, (end - start));
 			if (p == NULL)
 			{
-				freememory(arr, p, n);
+				freememory(arr, n);
 				return (NULL);
 			}
 			arr[n] = p;

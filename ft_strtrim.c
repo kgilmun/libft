@@ -10,52 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
-static	int	ft_strlen (char const *str)
-{
-	int	i;
-	i = 0;
-	while (str[i])
-		i++;
-	return i;
-}
-
-static	char	*ft_substr(const char *str, unsigned int start, size_t len)
-{
-	unsigned int	i;
-	unsigned int	count;
-	char			*p;
-
-	count = 0;
-	if (str == NULL)
-		return (NULL);
-	while (str[count])
-		count++;
-	if (start >= count)
-		return (NULL);
-	if ((start + len) > count)
-		len = count - start;
-	i = 0;
-	p = (char *)malloc((len + 1) * sizeof(char));
-	if (p == NULL)
-		return (NULL);
-	while (i <= len)
-	{
-		p[i] = str[start + i];
-		i++;
-	}
-	p[i] = '\0';
-	return (p);
-}
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		i;
-	int		j;
-	int		initial;
-	int		final;
+	int		i, j, initial, final;
 	char	*str;
 
 	i = 0;
@@ -68,7 +28,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 			j++;
 	}
 	initial = i;
-	i = ft_strlen(s1) - 1;
+	i = ft_strlen((char *)s1) - 1;
 	j = 0;
 	while (set[j] && s1[i])
 	{
@@ -81,8 +41,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	str = ft_substr(s1, initial, (final - initial));
 	return (str);
 }
-
-int main () {
+/*int main () {
 	printf("%s\n", ft_strtrim("espana", "espan"));
 	printf("%s\n", ft_strtrim("   manzana", " a"));
 	printf("%s\n", ft_strtrim("111111vieta", "1vio"));
@@ -91,4 +50,4 @@ int main () {
 	printf("%s\n", ft_strtrim("", "es"));
 	printf("%s\n", ft_strtrim("espana", ""));
 	printf("%s\n", ft_strtrim("andnaaa", "a"));
-}
+}*/

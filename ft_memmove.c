@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char	*initial;
@@ -24,4 +26,5 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		final[len] = initial[len];
 		len--;
 	}
+	return (final);
 }
